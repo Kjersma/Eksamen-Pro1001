@@ -25,7 +25,21 @@ body {
 
 .logo-bilde {
   font-size: 200px;
-  color: white;
+  color: blue;
+}
+
+p{
+  color: yellow;
+}
+
+p{
+  color: grey;
+}
+
+
+
+.logo-bilde p{
+  color: red;
 }
 
 .logo-topp {
