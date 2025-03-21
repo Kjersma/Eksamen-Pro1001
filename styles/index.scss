@@ -1,47 +1,47 @@
 header {
 	display: flex;
-  align-items: center;       /* Vertikal sentrering */
-  justify-content: center;   /* Horisontal sentrering (valgfritt) */
-  height: 200px;    
-  text-align: center;
+	justify-content: center; /* Horisontal sentrering (valgfritt) */
+	text-align: center;
 	background: #f7f2de;
-	height: 68px;
+	padding: 10px;
 }
 
-logo{
-	font-family: Frank Ruhl Libre; 
+logo {
+	font-family: Frank Ruhl Libre;
 	text-transform: uppercase;
 	display: flex;
-	}
+}
+
+header logo {
+	font-size: 24px;
+	align-items: center; /* Vertikal sentrering */
+	justify-content: center; /* Horisontal sentrg (valgfritt) */
+}
 
 body {
-  margin: 0;
-  background: white;
-  padding: 0;
-  border: none;
+	margin: 0;
+	background: white;
+	padding: 0;
+	border: none;
 }
 
 .logo-bilde {
 	font-size: 200px;
-	color: yellow;
-    p {color: green}
-}
+	color: white;
 	
-.logo-topp {
-	font-size: 24px;
-  align-items: center;       /* Vertikal sentrering */
-  justify-content: center;   /* Horisontal sentrering (valgfritt) */
 }
 
-.logo-footer{
+img {
+  width: 100%;
+ } 
+
+footer logo  {
 	font-size: 62px;
 	color: white;
 }
 
-
-
 footer {
-	background: #DC4131;
+	background: #dc4131;
 	padding-left: 54px;
 	padding-top: 41px;
 	padding-bottom: 93px;
