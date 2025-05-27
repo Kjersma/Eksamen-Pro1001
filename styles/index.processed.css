@@ -19,6 +19,19 @@ body {
 	border: none;
 }
 
+p {
+	font-family: "Arimo", sans-serif;
+}
+
+.grotesk {
+	font-family: "Arimo", sans-serif;
+	font-weight: 100;
+}
+
+.frank {
+	font-family: Frank Ruhl Libre;
+}
+
 /*NAVIGATION-----------------------------------*/
 
 nav {
@@ -60,18 +73,92 @@ h1 {
 	font-family: Frank Ruhl Libre;
 	text-transform: uppercase;
 	text-align: center;
+	font-weight: 100;
 }
 
-header img {
+.top-image {
+  max-height: 850px;
 	width: 100%;
-	height: auto;
+  overflow: hidden;
+	position: relative;
 }
 
+
+.top-image img {
+ width: 100%;
+  height: 100%;
+  object-fit: cover;  
+	object-position: center bottom; 
+	display: block;
+}
+
+
+.vertical-line {
+	position: absolute;
+	top: 35%; 
+	left: 50%;
+	display: block;
+	border-left: 2px solid #ffffff; /* tykkelse og farge */
+	height: 208px;
+	z-index: 2;
+}
+
+header p {
+	position: absolute;
+	top: 70%; /* 50 % ned fra toppen av header */
+	left: 50%;
+	transform: translate(-50%, -50%);
+	z-index: 1;
+	font-size: 2.25rem;
+	color: white;
+	text-transform: uppercase;
+	text-align: center;
+}
+
+/*MAIN WHITE-----------------------------------*/
+
+.white-boxes {
+	display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin: 10px auto; /* sentrert horisontalt */
+  argin: 20px auto;
+  justify-content: center;
+}
+
+.white-box{
+  padding: 10px;
+  display: flex;
+  flex-direction: column; /* Legger elementene oppå hverandre */
+  margin: 2px auto; /* sentrert horisontalt */
+  flex: 1 1 400px;	
+}
+
+
+/*MAIN WHITE-----------------------------------*/
+
+.standard-img{
+	display: block; /* fjerner eventuell inline-gap */
+  width: 100%;
+  max-width: 454px;
+  height: auto;
+  border-radius: 16px; /* avrundede hjørner */
+  aspect-ratio: 3 / 2;
+  object-fit: cover;
+}
+
+h2{
+	text-transform: uppercase;
+	font-size: 2.25rem;
+}
+ 
 /*FOOTER-----------------------------------*/
 
 footer logo {
 	font-size: 62px;
 	color: white;
+	font-weight: 100;
 }
 
 footer {
