@@ -1,4 +1,27 @@
-header {
+/* Global */
+* {
+	margin: 0;
+	padding: 0;
+}
+
+*,
+*::before,
+*::after {
+	box-sizing: border-box;
+}
+
+html {
+	scroll-behavior: smooth;
+}
+
+body {
+	background: white;
+	border: none;
+}
+
+/*NAVIGATION-----------------------------------*/
+
+nav {
 	display: flex;
 	justify-content: center; /* Horisontal sentrering (valgfritt) */
 	text-align: center;
@@ -12,30 +35,41 @@ logo {
 	display: flex;
 }
 
-header logo {
-	font-size: 24px;
+nav logo {
+	font-size: 2rem;
 	align-items: center; /* Vertikal sentrering */
 	justify-content: center; /* Horisontal sentrg (valgfritt) */
 }
 
-body {
-	margin: 0;
-	background: white;
-	padding: 0;
-	border: none;
+/*HEADER-----------------------------------*/
+
+header {
+	position: relative;
+	width: 100%;
+	overflow: hidden;
 }
 
-.logo-bilde {
-	font-size: 200px;
+h1 {
+	position: absolute;
+	top: 20%; /* 50 % ned fra toppen av header */
+	left: 50%;
+	transform: translate(-50%, -50%);
+	z-index: 1;
+	font-size: 12.5rem;
 	color: white;
-	
+	font-family: Frank Ruhl Libre;
+	text-transform: uppercase;
+	text-align: center;
 }
 
-img {
-  width: 100%;
- } 
+header img {
+	width: 100%;
+	height: auto;
+}
 
-footer logo  {
+/*FOOTER-----------------------------------*/
+
+footer logo {
 	font-size: 62px;
 	color: white;
 }
