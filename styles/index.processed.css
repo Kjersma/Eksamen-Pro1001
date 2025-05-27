@@ -77,25 +77,23 @@ h1 {
 }
 
 .top-image {
-  max-height: 850px;
+	max-height: 850px;
 	width: 100%;
-  overflow: hidden;
+	overflow: hidden;
 	position: relative;
 }
 
-
 .top-image img {
- width: 100%;
-  height: 100%;
-  object-fit: cover;  
-	object-position: center bottom; 
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
+	object-position: center bottom;
 	display: block;
 }
 
-
 .vertical-line {
 	position: absolute;
-	top: 35%; 
+	top: 35%;
 	left: 50%;
 	display: block;
 	border-left: 2px solid #ffffff; /* tykkelse og farge */
@@ -119,40 +117,56 @@ header p {
 
 .white-boxes {
 	display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-  justify-content: center;
-  margin: 10px auto; /* sentrert horisontalt */
-  argin: 20px auto;
-  justify-content: center;
+	flex-direction: row;
+	flex-wrap: wrap;
+	justify-content: center;
+	margin: 10px auto; /* sentrert horisontalt */
+	justify-content: center;
 }
 
-.white-box{
-  padding: 10px;
-  display: flex;
-  flex-direction: column; /* Legger elementene oppå hverandre */
-  margin: 2px auto; /* sentrert horisontalt */
-  flex: 1 1 400px;	
+.white-box {
+	padding: 90px;
+	display: flex;
+	flex-direction: column; /* Legger elementene oppå hverandre */
+	margin: 2px auto; /* sentrert horisontalt */
+	flex: 1 1 400px;
+	justify-content: center;
+	border: 1px solid #000; /* svart ramme */
+	box-sizing: border-box;
+	justify-content: center;
 }
 
+.front-frank {
+	font-size: 1.25rem;
+	text-align: center;
+	margin-top: 10px;
+}
+
+.white-img {
+	justify-content: center;
+	margin: 44px;
+	border-radius: 16px; /* avrundede hjørner */
+}
 
 /*MAIN WHITE-----------------------------------*/
 
-.standard-img{
+.standard-img {
 	display: block; /* fjerner eventuell inline-gap */
-  width: 100%;
-  max-width: 454px;
-  height: auto;
-  border-radius: 16px; /* avrundede hjørner */
-  aspect-ratio: 3 / 2;
-  object-fit: cover;
+	width: 100%;
+	max-width: 454px;
+	height: auto;
+	border-radius: 16px; /* avrundede hjørner */
+	aspect-ratio: 3 / 2;
+	object-fit: cover;
 }
 
-h2{
+h2 {
 	text-transform: uppercase;
 	font-size: 2.25rem;
+	text-align: center;
+	line-height: 2.25rem;
 }
- 
+
 /*FOOTER-----------------------------------*/
 
 footer logo {
