@@ -81,14 +81,15 @@ h1 {
 	width: 100%;
 	overflow: hidden;
 	position: relative;
+	display: flex;
 }
 
 .top-image img {
 	width: 100%;
-	height: 100%;
 	object-fit: cover;
 	object-position: center bottom;
 	display: block;
+
 }
 
 .vertical-line {
@@ -120,20 +121,20 @@ header p {
 	flex-direction: row;
 	flex-wrap: wrap;
 	justify-content: center;
-	margin: 10px auto; /* sentrert horisontalt */
-	justify-content: center;
+	align-items: center;
 }
 
 .white-box {
 	padding: 90px;
 	display: flex;
 	flex-direction: column; /* Legger elementene oppå hverandre */
-	margin: 2px auto; /* sentrert horisontalt */
-	flex: 1 1 400px;
+	flex: 0 1 1000px;
 	justify-content: center;
-	border: 1px solid #000; /* svart ramme */
-	box-sizing: border-box;
-	justify-content: center;
+	align-items: center;
+}
+
+.border-right{
+	border-right: 1px solid #000;
 }
 
 .front-frank {
@@ -148,7 +149,97 @@ header p {
 	border-radius: 16px; /* avrundede hjørner */
 }
 
-/*MAIN WHITE-----------------------------------*/
+.red-button{
+	color: white;
+	background-color: #dc4131;
+	  border: none; /* fjern standard kant */
+  border-radius: 0.5rem; /* avrundede hjørner */
+  cursor: pointer; /* viser pekeren ved hover */
+	font-size: 1rem;
+	 padding: 0.8rem 1.9rem; /* vertikal og horisontal luft */
+	width: 320px;
+	align-items: center;
+	margin-top: 44px;
+}
+
+.red-button:hover{
+		background-color: #ae2e21;
+	
+	}
+
+/*MAIN BROWN-----------------------------------*/
+.how-it-works {
+  display: flex;               /* Plasserer barna (venstre og høyre kolonne) ved siden av hverandre */
+  align-items: center;         /* Vertikalt sentrerer venstre kolonne ift. høyre (for estetisk balansert look) */
+	background-color: #f7f2de;
+	align-items: stretch;
+}
+ 
+.how-it-works-left {
+  flex: 0 0 30%;               /* Fast bredde ~30% av seksjonen for venstre kolonne */
+  padding: 1em;                /* Litt luft rundt teksten */
+	border: 1px solid #000;
+	  border-right: none;         /* Fjern linje under siste blokk (da containerens bunnlinje allerede er der) */
+}
+
+.how-it-works-left h2 {
+  margin: 0;                   /* Fjern default margin for overskriften */
+	text-align: center; 
+
+}
+
+.how-it-works-right {
+  flex: 1;                     /* Høyre kolonne tar resten av tilgjengelig bredde */
+	display: flex; 
+	flex-direction: row; 
+	flex-wrap: wrap; 
+  padding: 0 5em;              /* Horisontal padding så tekst ikke berører kantene */
+	align-items: left; 
+}
+
+.how-it-works-right .step {
+  display: flex;  
+	padding: 1em 0;              /* Vertikal padding innen hver blokk for luft over/under teksten */
+	border: 1px solid #000;
+	  align-items: center; 
+}
+
+.how-it-works-right .step:last-child {
+  border-bottom: none;         /* Fjern linje under siste blokk (da containerens bunnlinje allerede er der) */
+}
+
+.how-it-works-right .step h3 {
+  margin: 0 0 0.5em 0;         /* Liten bunnmargin under tittelen for å skille den fra teksten */
+	font-family: "Arimo", sans-serif;
+	font-weight: 100;
+	font-size: 1rem;
+	align-self: center;  
+}
+
+
+.how-it-works-right .step p {
+  margin: 0 0 1em 0;           /* Margin under avsnitt for luft (siste avsnitt justeres under) */
+	font-family: "Arimo", sans-serif;
+	font-weight: 100;
+	font-size: 1.25rem;
+	text-decoration: none;
+}
+
+.how-it-works-right .step a {
+  margin: 0 0 1em 0;           /* Margin under avsnitt for luft (siste avsnitt justeres under) */
+	font-family: "Arimo", sans-serif;
+  font-weight: inherit;   /* arver font-vekt */
+	font-size: 1.25rem;
+  color: rgba(0, 0, 0, 0.7);
+	display: block;
+}
+
+.how-it-works-right .step p:last-child {
+  margin-bottom: 0;            /* Ingen ekstra margin etter siste avsnitt i blokken */
+}
+
+
+/*MAIN-----------------------------------*/
 
 .standard-img {
 	display: block; /* fjerner eventuell inline-gap */
@@ -170,8 +261,7 @@ h2 {
 /*FOOTER-----------------------------------*/
 
 footer logo {
-	font-size: 62px;
-	color: white;
+	font-size: 3.875rem;
 	font-weight: 100;
 }
 
@@ -180,4 +270,80 @@ footer {
 	padding-left: 54px;
 	padding-top: 41px;
 	padding-bottom: 93px;
+	 color: white;
+}
+
+footer h2{
+	text-transform: uppercase;
+	text-align: left;
+	margin-top: 2%;
+	margin-bottom: 0.5%;
+}
+
+footer p{
+		font-weight: 100;
+		font-size: 1.5rem;
+}
+
+
+
+form {
+  font-family: "Poppins", sans-serif;
+  margin: 0;
+  width: 90%;
+  max-width: 460px;
+  padding-bottom: 1%;
+
+}
+
+form button {
+  display: block;
+  width: 100%;
+  margin-top: 10px;
+  text-align: center;
+	border-radius: 0.4rem; /* avrundede hjørner */
+	padding: 0.5rem;
+	border: none;
+}
+
+form input,
+form textarea{
+	border-radius: 0.4rem;
+  display: block;
+  width: 100%;
+  padding: 0.5rem;
+  font-family: inherit;
+	border: none;
+}
+
+input:focus,
+textarea:focus {
+  outline: none;
+  border: 2px solid #4d9eb3; /* Farge og tykkelse på rammen */
+  transition: border 0.2s ease, box-shadow 0.2s ease;
+}
+
+label {
+  display: block; /*tvinger label til å starte på ny linje og ta hele linjens bredde.*/
+  padding-top: 0.9em;
+}
+
+/*RESPONSIVE-----------------------------------*/
+
+@media (max-width: 768px) {
+  .how-it-works {
+    flex-direction: column;    /* Stable kolonnene vertikalt */
+    align-items: stretch;      /* Strekk slik at begge kolonner fyller hele bredden */
+  }
+  .how-it-works-left, .how-it-works-right {
+    flex: none;                /* Deaktiver flex-basis på kolonnene */
+    width: 100%;               /* Hver kolonne tar 100% bredde (full bredde på mobil) */
+  }
+  .how-it-works-left {
+    text-align: center;        /* Sentrer overskriftsteksten horisontalt på mobil */
+    margin-bottom: 1em;        /* Litt ekstra plass under overskriften før neste blokk */
+  }
+  .how-it-works-right {
+    text-align: center;        /* Sentrer teksten i informasjonsblokkene på mobil for bedre lesbarhet */
+  }
 }
