@@ -2,61 +2,177 @@
 <html lang="en">
 
 <head>
-		<meta charset="UTF-8">
-		<title>FRAM - Home delivery from your local farms</title>
-		<meta name="viewport" content="width=device-width, initial-scale=1">
-		<link rel="stylesheet" href="styles/index.css">
-
-		<link rel="preconnect" href="https://fonts.googleapis.com">
-		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-		<link href="https://fonts.googleapis.com/css2?family=Arimo:ital,wght@0,400..700;1,400..700&display=swap" rel="stylesheet">
-		<link href="https://fonts.googleapis.com/css2?family=Frank+Ruhl+Libre:wght@300..900&display=swap" rel="stylesheet">
-
+    <meta charset="UTF-8">
+    <title>FRAM - Home delivery from your local farms</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="styles/index.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Arimo:ital,wght@0,400..700;1,400..700&display=swap"
+        rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Frank+Ruhl+Libre:wght@300..900&display=swap" rel="stylesheet">
 </head>
 
 <body>
+    <!-- NAVIGATION------------------------------------------>
+    <nav>
+        <div>
+            <button class="hamburger" aria-label="Åpne meny">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+        <logo>FRAM</logo>
+        <button class="green-button">0</button>
+  
 
-		<!-- NAVIGATION------------------------------------------>
+        <!-- pop-up -->
 
-		<nav>
-				<logo>FRAM</logo>
-		</nav>
+        <dialog class="dropdown-menu" aria-label="menu">
+            <div class="menu-content">
 
-		<main>
-				<!-- PRODUCE------------------------------------------>
+                <button class="close" aria-label="Close modal"> &times;</button> <!-- &times = kryss -->
+                <ul class="nav-menu">
+                    <li><a href="products.html">PRODUCTS</a></li>
+                    <li><a href="chatbot.html">CHAT</a></li>
+                    <li class="last_link"><a href="">CHECKOUT</a></li>
+                </ul>
+            </div>
+        </dialog>
 
-				<section class="produce">
-						<h2 class="left grotesk">produce</h2>
-                        <div class="text-wrapper">
-<p class="grotesk left">Explore our selection of seasonal produce, sourced directly from local farms to ensure peak freshness and quality. Every item is chosen with care, supporting sustainable practices and bringing the best of the harvest to your table</p></div>
-				</section>
+    </nav>
+    <main>
 
-		</main>
 
-		<!-- FOOTER------------------------------------------>
+        <!-- PRODUCE------------------------------------------>
+        <section class="produce">
+            <h2 class="left grotesk">produce</h2>
+            <div class="text-wrapper">
+                <p class="grotesk left">Explore our selection of seasonal produce, sourced directly from local farms to
+                    ensure peak freshness and quality. Every item is chosen with care, supporting sustainable practices and
+                    bringing the best of the harvest to your table</p>
+            </div>
+        </section>
+        <div class="brown">
+            <div class="product-container">
+                <!-- Produktkort 1: Oats -->
+                <div class="product-card">
+                    <div class="relative">
+                        <img src="https://assets.codepen.io/13779024/web_grain.jpg" alt="Oats" class="product-image">
+                        <button class="add-to-basket">Add to basket ↑</button>
+                    </div>
+                    <div class="product-name-price">
+                        <span class="product-name">Oats</span>
+                        <span class="product-price">48 kr / kg</span>
+                    </div>
+                    <div class="product-weight">1 kg</div>
+                </div>
 
-		<footer>
-				<logo class="logo-footer frank">FRAM</logo>
-				<hr style="border: none; border-top: 0.5px solid white;">
-				<h2 class="grotesk">Stay updated</h2>
-				<p class="frank">Sign up for our newsletter to be the first<br> to know about new produce or other<br> exciting news!</p>
+                <!-- Produktkort 2: Red Onions -->
+                <div class="product-card">
+                    <div class="relative">
+                        <img src="https://assets.codepen.io/13779024/web_onions.jpg" alt="Red Onions" class="product-image">
+                        <button class="add-to-basket">Add to basket ↑</button>
+                    </div>
+                    <div class="product-name-price">
+                        <span class="product-name">Red Onions</span>
+                        <span class="product-price">48 kr / kg</span>
+                    </div>
+                    <div class="product-weight">0.5 kg</div>
+                </div>
 
-				<form class="form" id="form" action="mailto:hei@fram.com" method="post" enctype="text/plain">
-						<label for="name"></label>
-						<input type="text" id="name" name="name" required placeholder="First name">
 
-						<label for="email"></label>
-						<div class="input-wrapper">
-								<input type="email" id="email" name="email" required placeholder="E-mail adress">
+                <!-- Produktkort 3: Garlic -->
+                <div class="product-card">
+                    <div class="relative">
+                        <img src="https://assets.codepen.io/13779024/web_garlic.jpg" alt="Garlic" class="product-image">
+                        <button class="add-to-basket">Add to basket ↑</button>
+                    </div>
+                    <div class="product-name-price">
+                        <span class="product-name">Garlic</span>
+                        <span class="product-price">48 kr / kg</span>
+                    </div>
+                    <div class="product-weight">0,2 kg</div>
+                </div>
+                <!-- Produktkort 4: Potato -->
+                <div class="product-card">
+                    <div class="relative">
+                        <img src="https://assets.codepen.io/13779024/web_potatos.jpg" alt="Garlic" class="product-image">
+                        <button class="add-to-basket">Add to basket ↑</button>
+                    </div>
+                    <div class="product-name-price">
+                        <span class="product-name">potato</span>
+                        <span class="product-price">32 kr / kg</span>
+                    </div>
+                    <div class="product-weight">1 kg</div>
+                </div>
 
-								<button type="submit" class="submit-arrow">
-										<svg width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-												<path d="M5 12h14M13 5l7 7-7 7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
-										</svg>
-								</button>
-						</div>
 
-				</form>
+                <!-- Produktkort 5: Carrots -->
+                <div class="product-card">
+                    <div class="relative">
+                        <img src="https://assets.codepen.io/13779024/web_carrots.jpg" alt="Garlic" class="product-image">
+                        <button class="add-to-basket">Add to basket ↑</button>
+                    </div>
+                    <div class="product-name-price">
+                        <span class="product-name">Carrots</span>
+                        <span class="product-price">48 kr / kg</span>
+                    </div>
+                    <div class="product-weight">1 kg</div>
+                </div>
+            </div>
+        </div>
 
-		</footer>
+        <!-- MAP------------------------------------------>
+
+
+        <section class="how-it-works ">
+            <div class="how-it-works-left">
+                <h2 class="grotesk">See our <br>partnering farms</h2>
+            </div>
+
+            <div class="how-it-works-right">
+                <iframe width="100%"
+                    height="400" 
+                    style="border:0;"
+                    loading="lazy" 
+                    allowfullscreen
+                    src="https://www.google.com/maps/embed/v1/place?key=AIzaSyBekhQHwCeJ_4mUZpo-TgUyRk70kYkriaQ&amp;q=Oppdalslinna+242,+Roa">
+                </iframe>
+
+
+            </div>
+
+
+        </section>
+    </main>
+
+
+    <!-- FOOTER------------------------------------------>
+    <footer>
+        <logo class="logo-footer frank">FRAM</logo>
+        <hr style="border: none; border-top: 0.5px solid white;">
+        <h2 class="grotesk">Stay updated</h2>
+        <p class="frank">Sign up for our newsletter to be the first<br> to know about new produce or other<br>
+            exciting news!</p>
+        <form class="form" id="form" action="mailto:hei@fram.com" method="post" enctype="text/plain">
+            <label for="name"></label>
+            <input type="text" id="name" name="name" required placeholder="First name">
+            <label for="email"></label>
+            <div class="input-wrapper">
+                <input type="email" id="email" name="email" required placeholder="E-mail adress">
+                <button type="submit" class="submit-arrow">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M5 12h14M13 5l7 7-7 7" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                            stroke-linejoin="round" />
+                    </svg>
+                </button>
+            </div>
+        </form>
+    </footer>
+    <script type="text/javascript" src="scripts/index.js"></script>
+    <script type="module" src="scripts/chatbot.js"></script>
 </body>
+
+</html>

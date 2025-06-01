@@ -40,12 +40,17 @@ p {
     margin-bottom: 0;
 }
 
+.brown {
+       background: #f7f2de;
+}
+
 /*NAVIGATION-----------------------------------*/
 
 nav {
     display: flex;
-    justify-content: center;
-    /* Horisontal sentrering (valgfritt) */
+    justify-content: space-between;
+    align-items: center;
+
     text-align: center;
     background: #f7f2de;
     padding: 10px;
@@ -61,10 +66,46 @@ logo {
 nav logo {
     font-size: 2rem;
     align-items: center;
-    /* Vertikal sentrering */
     justify-content: center;
-    /* Horisontal sentrg (valgfritt) */
+
 }
+
+.green-button{
+background-color: #008f51;
+color: black; 
+border: none;
+padding: 0.5rem 1.2rem;
+border-radius: 1.5rem;
+height: 2.25rem;
+display: inline-flex;
+      align-items: left;
+      justify-content: center;
+      font-size: 0.875rem;
+
+}
+.menu-content{
+background-color: #008f51; ;
+}
+
+.hamburger {
+  display: flex;              
+  flex-direction: column;
+  justify-content: space-between;
+  width: 1.5rem;               
+  height: 1.3125rem;            
+  background: none;           
+  border: none;              
+  padding: 0;
+  cursor: pointer;
+  align-items: left;
+}
+
+/* De tre strekene */
+.hamburger span {
+  display: block;
+  height: 0.2rem;            
+  background-color: #333;     
+  }
 
 /*HEADER-----------------------------------*/
 
@@ -110,7 +151,7 @@ h1 {
     left: 50%;
     display: block;
     border-left: 2px solid #ffffff;
-    /* tykkelse og farge */
+
     height: 208px;
     z-index: 2;
 }
@@ -142,7 +183,6 @@ header p {
     padding: 90px;
     display: flex;
     flex-direction: column;
-    /* Legger elementene oppå hverandre */
     flex: 0 1 800px;
     justify-content: center;
     align-items: center;
@@ -162,21 +202,16 @@ header p {
     justify-content: center;
     margin: 44px;
     border-radius: 16px;
-    /* avrundede hjørner */
 }
 
 .red-button {
     color: white;
     background-color: #dc4131;
     border: none;
-    /* fjern standard kant */
     border-radius: 0.5rem;
-    /* avrundede hjørner */
     cursor: pointer;
-    /* viser pekeren ved hover */
     font-size: 1rem;
     padding: 0.8rem 1.9rem;
-    /* vertikal og horisontal luft */
     width: 320px;
     align-items: center;
     margin-top: 44px;
@@ -191,9 +226,7 @@ header p {
 
 .how-it-works {
     display: flex;
-    /* Plasserer barna (venstre og høyre kolonne) ved siden av hverandre */
     align-items: center;
-    /* Vertikalt sentrerer venstre kolonne ift. høyre (for estetisk balansert look) */
     background-color: #f7f2de;
     align-items: stretch;
 }
@@ -213,7 +246,6 @@ header p {
 
 .how-it-works-left h2 {
     margin: 0;
-    /* Fjern default margin for overskriften */
     text-align: center;
 
 }
@@ -279,12 +311,10 @@ header p {
 
 .standard-img {
     display: block;
-    /* fjerner eventuell inline-gap */
     width: 100%;
     max-width: 454px;
     height: auto;
     border-radius: 16px;
-    /* avrundede hjørner */
     aspect-ratio: 3 / 2;
     object-fit: cover;
 }
@@ -300,9 +330,8 @@ h2 {
 /*POPULAR-----------------------------------*/
 .popular {
     background-color: white;
-
-
 }
+
 
 .popular h2 {
     text-align: left;
@@ -313,28 +342,25 @@ h2 {
 
 .product-container {
     display: flex;
-    /* Bruk flex-layout for beholderen */
-    flex-wrap: nowrap;
+    flex-wrap: wrap;
     /* Hold alle kort på én linje (ingen wrapping) */
     gap: 1rem;
-    /* Legg litt mellomrom mellom hvert produktkort */
     margin: 0;
-    /* Fjern eventuell standard margin */
-    background-color: white;
     padding-right: 2rem;
     padding-left: 2rem;
+    max-width: 1333px;
+    align-items: center;
 }
 
 /* Stil for hvert enkelt produktkort */
 .product-card {
     flex: 0 0 33%;
-    max-width: 33%;
+    max-width: 30%;
  
     box-sizing: border-box;
 }
 
 
-/* Gjør produktbildet responsivt og med avrundede hjørner */
 .product-image {
     width: 100%;
     object-fit: cover;
@@ -347,11 +373,9 @@ h2 {
 /* Beholder for produktnavn og pris på samme linje */
 .product-name-price {
     display: flex;
-    /* Bruk flex for å plassere navn og pris i samme linje */
     justify-content: space-between;
     /* Plasser produktnavn til venstre og pris til høyre */
     padding-top: 0.5rem;
-    /* Litt avstand over denne linjen (mellom bildet og tekst) */
     font-size: 1.55rem;
     font-family: "Arimo", sans-serif;
 }
@@ -374,15 +398,12 @@ h2 {
 /* Produktvekt, plassert på egen linje under navn/pris */
 .product-weight {
     margin-top: 0.25rem;
-    /* Lite mellomrom over vekt-teksten */
     font-size: 1.25rem;
-    /* Litt mindre tekststørrelse for vektinfo */
     color: #000000CC;
-    /* Grå farge på teksten for vekt (for å skille fra navn/pris) */
     font-family: "Arimo", sans-serif;
     padding-left: 0.5rem;
     padding-top: 0.4rem;
-    margin-bottom: 2rem;
+    margin-bottom: 5rem;
 }
 
 /* Stil for "Add to basket"-knappen */
@@ -399,7 +420,6 @@ h2 {
     font-size: 1rem;
     font-family: "Arimo", sans-serif;
     border-radius: 1rem;
-    /* Litt avrunding av hjørnene på kortets bakgrunn */
     position: absolute;
     right: 1rem;
     bottom: 1rem;
@@ -413,27 +433,26 @@ h2 {
 
 /*PRODUCT side 2-----------------------------------*/
 
-.produce {
-    margin-left: 1%;
-}
 
 .produce h2 {
-    margin-left: 2%;
+    margin-left: 2rem;
     margin-top: 5%;
     margin-bottom: 1%;
 }
 
 .produce p {
     font-size: 1.25rem;
-    margin-left: 2%;
+    margin-left: 2rem;
+    margin-bottom: 2rem;
 }
 
 .text-wrapper p {
     max-width: 40rem;
-    /* maks. ca. 40 ganger rot-fontstørrelsen, ≈ 640px hvis html = 16px */
     width: 100%;
-    /* sørger for at avsnittet fyller hele tilgjengelige bredde inntil maks */
 }
+
+
+/*MAP side 2-----------------------------------*/
 
 
 
@@ -446,7 +465,6 @@ h2 {
     object-fit: cover;
     /* beholder proporsjoner, fyller, beskjærer */
     object-position: center;
-    /* ønsker midtstilling */
 }
 
 
@@ -468,15 +486,15 @@ footer {
 footer h2 {
     text-transform: uppercase;
     text-align: left;
-    margin-top: 2%;
-    margin-bottom: 0.6%;
+    margin-top: 5%;
+    margin-bottom: 1.5rem;
 }
 
 footer p {
     font-weight: 100;
     font-size: 1.5rem;
     line-height: 1.75rem;
-    margin-bottom: 0.6%;
+    margin-bottom: 1.4rem;
 }
 
 form {
@@ -518,14 +536,12 @@ form {
     margin: 0;
     cursor: pointer;
     color: black;
-    /* arver farge på SVG via currentColor */
     padding: 0 10px;
 }
 
 
 .submit-arrow:hover svg {
     transform: translateX(2px);
-    /* liten bevegelse til høyre */
     transition: transform 0.2s ease;
 }
 
@@ -545,13 +561,11 @@ input:focus,
 textarea:focus {
     outline: none;
     border: 2px solid #0b0a08;
-    /* Farge og tykkelse på rammen */
     transition: border 0.2s ease, box-shadow 0.2s ease;
 }
 
 label {
     display: block;
-    /*tvinger label til å starte på ny linje og ta hele linjens bredde.*/
     padding-top: 0.9em;
 }
 
@@ -563,29 +577,23 @@ label {
 @media (max-width: 768px) {
     .how-it-works {
         flex-direction: column;
-        /* Stable kolonnene vertikalt */
         align-items: stretch;
-        /* Strekk slik at begge kolonner fyller hele bredden */
     }
 
     .how-it-works-left,
     .how-it-works-right {
         flex: none;
-        /* Deaktiver flex-basis på kolonnene */
         width: 100%;
         /* Hver kolonne tar 100% bredde (full bredde på mobil) */
     }
 
     .how-it-works-left {
         text-align: center;
-        /* Sentrer overskriftsteksten horisontalt på mobil */
         margin-bottom: 1em;
-        /* Litt ekstra plass under overskriften før neste blokk */
     }
 
     .how-it-works-right {
         text-align: center;
-        /* Sentrer teksten i informasjonsblokkene på mobil for bedre lesbarhet */
 
     }
 
@@ -594,13 +602,11 @@ label {
     .product-container {
         flex-wrap: wrap;
         justify-content: space-between;
-        /* Fordel kortene jevnt med plass mellom seg over hele bredden */
         overflow-x: auto;
     }
 
     .product-card {
         flex: 0 0 30%;
-        /* Hvert kort tar ca. 30% av bredden på store skjermer (3 kort ~ 90%) */
         max-width: 30%;
         /* Sikrer at kortene ikke blir bredere enn 30% hver på store skjermer */
     }
