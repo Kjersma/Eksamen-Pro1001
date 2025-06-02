@@ -23,6 +23,12 @@ p {
     font-family: "Arimo", sans-serif;
 }
 
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 2rem;
+}
+
 .grotesk {
     font-family: "Arimo", sans-serif;
     font-weight: 100;
@@ -40,10 +46,6 @@ p {
     margin-bottom: 0;
 }
 
-.brown {
-       background: #f7f2de;
-}
-
 /*NAVIGATION-----------------------------------*/
 
 nav {
@@ -55,6 +57,9 @@ nav {
     background: #f7f2de;
     padding: 10px;
     border-bottom: 1px solid #0b0a08;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
 }
 
 logo {
@@ -70,42 +75,127 @@ nav logo {
 
 }
 
-.green-button{
-background-color: #008f51;
-color: black; 
-border: none;
-padding: 0.5rem 1.2rem;
-border-radius: 1.5rem;
-height: 2.25rem;
-display: inline-flex;
-      align-items: left;
-      justify-content: center;
-      font-size: 0.875rem;
+.green-button {
+    background-color: #008f51;
+    color: black;
+    border: none;
+    padding: 0.5rem 1.2rem;
+    border-radius: 1.5rem;
+    height: 2.25rem;
+    display: inline-flex;
+    align-items: left;
+    justify-content: center;
+    font-size: 0.875rem;
 
 }
-.menu-content{
-background-color: #008f51; ;
-}
+
 
 .hamburger {
-  display: flex;              
-  flex-direction: column;
-  justify-content: space-between;
-  width: 1.5rem;               
-  height: 1.3125rem;            
-  background: none;           
-  border: none;              
-  padding: 0;
-  cursor: pointer;
-  align-items: left;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 1.5rem;
+    height: 1.3125rem;
+    background: none;
+    border: none;
+    padding: 0;
+    cursor: pointer;
+    align-items: left;
 }
 
 /* De tre strekene */
 .hamburger span {
-  display: block;
-  height: 0.2rem;            
-  background-color: #333;     
-  }
+    display: block;
+    height: 0.2rem;
+    background-color: #333;
+}
+
+/*POPUP meny-----------------------------------*/
+
+.dropdown-menu {
+    z-index: 1000;
+
+    position: absolute;
+    top: 0;
+    height: 100vh;
+    left: 0;
+    width: 100%;
+    max-width: 475px;
+    background-color: #008f51;
+    border: none;
+
+    padding-top: 10px;
+}
+
+.nav-menu li a {
+    margin: 0;
+    font-family: "Arimo", sans-serif;
+    font-weight: 100;
+    font-size: 2.25rem;
+    align-self: center;
+    width: 25%;
+    flex-shrink: 0;
+    text-decoration: none;
+    color: #0b0a08;
+    text-align: center;
+    padding: 1rem 0;
+    line-height: 1.8;
+}
+
+.nav-menu li.last_link {
+    margin-top: auto;
+    margin-bottom: 5rem;
+}
+
+.menu-content {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    align-items: center;
+}
+
+.close {
+    color: #0b0a08;
+    background-color: #008f51;
+    border: none;
+    font-size: 2rem;
+    text-align: left;
+    padding: 0.4rem;
+    align-self: flex-start;
+    margin-left: 1.5rem;
+    /* Litt avstand fra venstre kant */
+    margin-top: 0.1rem;
+    /* Litt avstand fra toppen */
+    cursor: pointer;
+}
+
+.nav-menu {
+    list-style: none;
+    /* Fjern punkter (bullets) */
+    padding: 0;
+    /* Nullstill padding */
+    margin: 12rem 0 0 0;
+    /* Litt avstand fra 'close'-knappen ned til lenkene */
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    /* Stable <li> vertikalt */
+    align-items: center;
+    /* Sentrer dem horisontalt */
+    flex-grow: 1;
+}
+
+.menu-line {
+    width: 100%;
+    /* Tar hele bredden av den grønne boksen */
+    border: none;
+    /* Fjern standard kantlinje på <hr> */
+    height: 1px;
+    /* Tykkelsen på linja */
+    background-color: #0b0a08;
+    /* Samme farge som teksten (eller ønsket farge) */
+
+}
 
 /*HEADER-----------------------------------*/
 
@@ -115,22 +205,8 @@ header {
     overflow: hidden;
 }
 
-h1 {
-    position: absolute;
-    top: 30%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    z-index: 1;
-    font-size: 12.5rem;
-    color: white;
-    font-family: Frank Ruhl Libre;
-    text-transform: uppercase;
-    text-align: center;
-    font-weight: 100;
-}
-
 .top-image {
-    max-height: 850px;
+    aspect-ratio: 2 / 1;
     width: 100%;
     overflow: hidden;
     position: relative;
@@ -142,50 +218,58 @@ h1 {
     object-fit: cover;
     object-position: center bottom;
     display: block;
+}
 
+.header-text {
+    position: absolute;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    inset: 0;
+    color: white;
+    text-align: center;
+    text-transform: uppercase;
+    font-family: "Arimo", sans-serif;
+    font-size: 2.25rem;
 }
 
 .vertical-line {
-    position: absolute;
-    top: 45%;
-    left: 50%;
     display: block;
     border-left: 2px solid #ffffff;
-
     height: 208px;
-    z-index: 2;
+    margin: 2rem 0;
 }
 
-header p {
-    position: absolute;
-    top: 80%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    z-index: 1;
-    font-size: 2.25rem;
-    color: white;
-    text-transform: uppercase;
-    text-align: center;
+.header-text h1 {
+    font-size: 12.5rem;
+    font-weight: 100;
+    font-family: Frank Ruhl Libre;
+    line-height: 0.7;
+    ;
 }
 
 /*MAIN WHITE-----------------------------------*/
 
 .white-boxes {
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    justify-content: center;
-    align-items: center;
     background-color: white;
 }
 
-.white-box {
-    padding: 90px;
+.white-boxes .container {
     display: flex;
+}
+
+.white-box {
+    display: flex;
+    padding: 4rem 2rem;
     flex-direction: column;
-    flex: 0 1 800px;
+    flex: 0 0 50%;
     justify-content: center;
     align-items: center;
+}
+
+.white-box:first-child {
+    border-right: 1px solid #000;
 }
 
 .border-right {
@@ -330,41 +414,36 @@ h2 {
 /*POPULAR-----------------------------------*/
 .popular {
     background-color: white;
+    padding-top: 5.625rem;
 }
 
 
 .popular h2 {
     text-align: left;
-    padding-top: 5.625rem;
-    padding-left: 2rem;
-    padding-bottom: 1.5rem;
+    margin-bottom: 1.5rem;
 }
 
 .product-container {
     display: flex;
-    flex-wrap: wrap;
     /* Hold alle kort på én linje (ingen wrapping) */
-    gap: 1rem;
-    margin: 0;
-    padding-right: 2rem;
-    padding-left: 2rem;
-    max-width: 1333px;
     align-items: center;
+    margin: 0 -0.5rem;
+}
+
+.product-container-wrap {
+    flex-wrap: wrap;
 }
 
 /* Stil for hvert enkelt produktkort */
 .product-card {
-    flex: 0 0 33%;
-    max-width: 30%;
- 
-    box-sizing: border-box;
+    padding: 0 0.5rem;
+    flex: 0 0 33.33333%;
 }
-
 
 .product-image {
     width: 100%;
     object-fit: cover;
-   border-radius: 1rem;
+    border-radius: 1rem;
     display: block;
     overflow: hidden;
     aspect-ratio: 227 / 216;
@@ -435,14 +514,12 @@ h2 {
 
 
 .produce h2 {
-    margin-left: 2rem;
-    margin-top: 5%;
-    margin-bottom: 1%;
+    margin-top: 6rem;
+    margin-bottom: 2rem;
 }
 
 .produce p {
     font-size: 1.25rem;
-    margin-left: 2rem;
     margin-bottom: 2rem;
 }
 
@@ -454,7 +531,9 @@ h2 {
 
 /*MAP side 2-----------------------------------*/
 
-
+.how-it-works-right {
+    padding: 5rem;
+}
 
 
 /*CHATBOT-----------------------------------*/
@@ -575,6 +654,26 @@ label {
 /* Brown boxes */
 
 @media (max-width: 768px) {
+
+    .container {
+        padding: 0 1rem;
+    }
+
+    .top-image {
+        max-height: none;
+        aspect-ratio: 11 / 16;
+    }
+
+    .header-text {
+        font-size: 1.6rem;
+        text-transform: none;
+    }
+
+    .header-text h1 {
+        font-size: 5rem;
+    }
+
+
     .how-it-works {
         flex-direction: column;
         align-items: stretch;
@@ -597,17 +696,94 @@ label {
 
     }
 
+    .white-boxes .container {
+        flex-direction: column;
+    }
+
+    .white-box {
+        flex: 0 0 100%;
+        padding: 6rem 0;
+    }
+
+    .white-box:first-child {
+        border-right: none;
+        border-bottom: 1px solid #000;
+    }
+
+
+    .red-button.grotesk{ /*targeter elementer som har begge klassene */
+        font-size: 1rem;
+    }
 
     /* Produce */
-    .product-container {
-        flex-wrap: wrap;
-        justify-content: space-between;
+    .product-container-swipe {
         overflow-x: auto;
     }
 
-    .product-card {
-        flex: 0 0 30%;
-        max-width: 30%;
-        /* Sikrer at kortene ikke blir bredere enn 30% hver på store skjermer */
+    .product-container-swipe .product-card {
+        flex: 0 0 80%;
+    }
+
+    .product-container-wrap .product-card {
+        flex: 0 0 100%;
+    }
+
+    .how-it-works-right {
+        padding: 1rem;
+    }
+
+    .how-it-works-left {
+        padding-top: 3rem;
+        padding-bottom: 3rem;
+    }
+
+    .how-it-works-left h2 {
+        font-size: 1.7rem;
+    }
+
+
+    .grotesk {
+        font-size: 1.8rem;
+    }
+
+    .white-img {
+        justify-content: center;
+        margin-top: 44px;
+        margin-bottom: 44px;
+        margin-left: 2px;
+        margin-right: 2px;
+        border-radius: 16px;
+    }
+
+    .white-boxes {
+        padding: 0.1rem;
+    }
+
+
+    /* Footer */
+    footer logo {
+        font-size: 3.2rem;
+        font-weight: 100;
+        padding-bottom: 2rem;
+    }
+
+    footer h2 {
+        text-transform: uppercase;
+        text-align: left;
+        margin-top: 5rem;
+
+        font-size: 1.8rem;
+    }
+
+    footer p {
+        font-weight: 100;
+        font-size: 1.1rem;
+        line-height: 1.4rem;
+        margin-bottom: 1.6rem;
+        margin-top: 5rem;
+    }
+
+    footer {
+        padding-left: 2rem;
     }
 }

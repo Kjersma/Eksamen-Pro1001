@@ -2,30 +2,60 @@
 <html lang="en">
 
 <head>
-		<meta charset="UTF-8">
-		<title>FRAM - Home delivery from your local farms</title>
-		<meta name="viewport" content="width=device-width, initial-scale=1">
-		<link rel="stylesheet" href="styles/index.css">
+    <meta charset="UTF-8">
+    <title>FRAM - Home delivery from your local farms</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="styles/index.css">
 
-		<link rel="preconnect" href="https://fonts.googleapis.com">
-		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-		<link href="https://fonts.googleapis.com/css2?family=Arimo:ital,wght@0,400..700;1,400..700&display=swap" rel="stylesheet">
-		<link href="https://fonts.googleapis.com/css2?family=Frank+Ruhl+Libre:wght@300..900&display=swap" rel="stylesheet">
-        <script type="text/javascript" src="scripts/index.js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Arimo:ital,wght@0,400..700;1,400..700&display=swap"
+        rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Frank+Ruhl+Libre:wght@300..900&display=swap" rel="stylesheet">
 </head>
+
 <body>
-			<!-- NAVIGATION------------------------------------------>
+    <!-- NAVIGATION------------------------------------------>
 
-		<nav>
-				<logo>FRAM</logo>
-		</nav>
+    <nav>
+        <div>
+            <button class="hamburger" aria-label="Åpne meny">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+        <logo>FRAM</logo>
 
-		<main>
-							<div class="chatbot-image">
-						<img src="https://assets.codepen.io/13779024/Hovedbilde-desktop-lite.jpg" alt="Utsikt over fjellandskap. Foto: Markus Spiske via Unsplash">
+        <button class="green-button">0</button>
 
 
-				</div>
-				</main>
+        <!-- pop-up -->
 
-	</body>
+        <dialog class="dropdown-menu" aria-label="menu">
+            <div class="menu-content">
+
+                <button class="close" aria-label="close menu"> &times;</button> <!-- &times = kryss -->
+                <hr class="menu-line">
+                <ul class="nav-menu">
+                    <li><a href="index.html">HOME</a></li>
+                    <li><a href="product.html">PRODUCTS</a></li>
+
+                    <li class="last_link"><a href="">CHECKOUT</a></li>
+                </ul>
+            </div>
+        </dialog>
+
+    </nav>
+
+    <main>
+        <div class="chatbot-image">
+            <img src="https://assets.codepen.io/13779024/Hovedbilde-desktop-lite.jpg"
+                alt="Utsikt over fjellandskap. Foto: Markus Spiske via Unsplash">
+
+
+        </div>
+    </main>
+    <script src="scripts/index.js" defer></script>
+    <script src="scripts/chatbot.js" defer></script>
+</body>

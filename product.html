@@ -24,38 +24,44 @@
             </button>
         </div>
         <logo>FRAM</logo>
+        
         <button class="green-button">0</button>
-  
+ 
 
         <!-- pop-up -->
 
         <dialog class="dropdown-menu" aria-label="menu">
             <div class="menu-content">
-
-                <button class="close" aria-label="Close modal"> &times;</button> <!-- &times = kryss -->
+ 
+                <button class="close" aria-label="close menu"> &times;</button> <!-- &times = kryss -->
+                <hr class="menu-line">
                 <ul class="nav-menu">
-                    <li><a href="products.html">PRODUCTS</a></li>
+                    <li><a href="index.html">HOME</a></li>
                     <li><a href="chatbot.html">CHAT</a></li>
                     <li class="last_link"><a href="">CHECKOUT</a></li>
                 </ul>
             </div>
         </dialog>
 
-    </nav>
+</nav>
+    
     <main>
 
 
         <!-- PRODUCE------------------------------------------>
         <section class="produce">
+            <div class="container">
             <h2 class="left grotesk">produce</h2>
             <div class="text-wrapper">
                 <p class="grotesk left">Explore our selection of seasonal produce, sourced directly from local farms to
                     ensure peak freshness and quality. Every item is chosen with care, supporting sustainable practices and
                     bringing the best of the harvest to your table</p>
             </div>
+            </div>
         </section>
         <div class="brown">
-            <div class="product-container">
+            <div class="container">
+            <div class="product-container product-container-wrap">
                 <!-- Produktkort 1: Oats -->
                 <div class="product-card">
                     <div class="relative">
@@ -122,6 +128,7 @@
                     <div class="product-weight">1 kg</div>
                 </div>
             </div>
+            </div>
         </div>
 
         <!-- MAP------------------------------------------>
@@ -171,8 +178,9 @@
             </div>
         </form>
     </footer>
-    <script type="text/javascript" src="scripts/index.js"></script>
-    <script type="module" src="scripts/chatbot.js"></script>
+  <script src="scripts/index.js" defer></script>
+    <script src="scripts/chatbot.js" defer></script>
+
 </body>
 
 </html>
