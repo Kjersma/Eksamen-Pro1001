@@ -6,6 +6,7 @@
     <title>FRAM - Home delivery from your local farms</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="styles/index.css">
+    <link rel="stylesheet" href="styles/chatbot.css">
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -52,10 +53,27 @@
         <div class="chatbot-image">
             <img src="https://assets.codepen.io/13779024/Hovedbilde-desktop-lite.jpg"
                 alt="Utsikt over fjellandskap. Foto: Markus Spiske via Unsplash">
-
-
         </div>
-    </main>
-    <script src="scripts/index.js" defer></script>
+
+        <!-- Chatboten -->
+
+        <script type="module">
+            import OpenAI from "https://esm.sh/openai@4.8.0?bundle";
+        <div id="chat-container">
+            <div id="messages"></div>
+
+            <div id="input-area">
+                <input type="text" id="user-input" placeholder="Skriv en melding..." />
+                <button id="send-btn">↑</button>
+            </div>
+        </div>
+
+        <!-- Koble til JavaScript (OpenAI SDK må være inkludert her) -->
     <script src="scripts/chatbot.js" defer></script>
+        <script src="scripts/index.js" defer></script>
+        </script>
+    </main>
+
+
+
 </body>

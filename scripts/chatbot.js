@@ -1,13 +1,7 @@
-
-
-  // Chatbot --------------------------
-
-
 import OpenAI from "openai";
 
 const openai = new OpenAI({
-  apiKey: 'your-api-key-here',
-  dangerouslyAllowBrowser: true
+  apiKey: process.env.OPENAI_API_KEY,
 });
 
 const response = await openai.responses.create({
@@ -68,4 +62,3 @@ const response = await openai.responses.create({
   top_p: 1,
   store: true
 });
-
