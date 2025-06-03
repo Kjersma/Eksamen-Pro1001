@@ -4,32 +4,49 @@
     margin: 0 auto;
     display: flex;
 }
-
-.chatbot-image img {
+.chatbot-main {
+    /* siden det er et bakgrunnsbilde og ikke et bilde av noe som har noe med innhold å gjøre, er det best å bruke  background-image istedenfor html  */
+    background-image: url(https://assets.codepen.io/13779024/Hovedbilde-desktop-lite.jpg);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    /* 62px er høyden på navigasjonsbaren, så her setter jeg minimuns størrelse på main elementet til å være 100% av skjermen minus header elementet for å få den midt på */
+    min-height: calc(100vh - 62px);
     width: 100%;
-    height: 100%;
-    object-fit: cover; /* beholder proporsjoner, fyller, beskjærer */
-    object-position: center;
-    display: block;
-    object-fit: cover;
+    /* Bruker flex her, som gir muligheten for: 
+    justify-content: center; - sentrer innholdet horisontalt
+    align-items: center; - sentrer innholdet vertikalt
+    */
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 #chat-container {
+    width: 580px;
     max-width: 580px;
+    min-height: 700px;
     overflow: hidden;
     position: relative;
     display: flex;
+    justify-content: space-between;
+    flex-direction: column;
     z-index: 1000;
     border-radius: 1rem;
     border: none;
-    position: fixed; /* setter boksen over bildet */
- bottom: 3rem;
-right: 3rem; 
-    
+    background-color: white;
+    /* padding og bakgrunnsfarge på det øverste elementet så vi slipper å gjøre det på hver underelement */
+    padding: 1rem;
+
 }
 
 #messages {
-    background-color: white;
+   background-color: #F7F2DE;
+    font-size: 1rem;
+    font-family: "Arimo", sans-serif;
+    font-weight: 100;
+    padding: 1rem;
+
 }
 
 
@@ -38,15 +55,25 @@ right: 3rem;
     background-color:#dc4131;
     max-width: 60px;
     border-radius: 1rem;
+    border: none;
+    color: white;
+    max-width: 60px;
+    max-height: 44px;;
+
 }
 
 #input-area {
-    background-color: white;
+    /* row er egt default her, men setter det for å vise forskjellen */
+    display: flex;
+    flex-direction: row;
+    gap: 1rem;
     font-size: 1rem;
     border: none;
 }
 
 #user-input {
+    display: block;
+    width: 100%;
     background-color: #E1EAF0;
     border: none;
     height: 4rem;
@@ -58,4 +85,7 @@ right: 3rem;
 #output_text {
     background-color: #F7F2DE;
     font-size: 1rem;
+    font-family: "Arimo", sans-serif;
+    font-weight: 100;
+    font-size: 2.25rem;
 }

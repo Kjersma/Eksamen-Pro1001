@@ -1,64 +1,59 @@
-import OpenAI from "openai";
+// Simple OpenAI chatbot integration
+// Replace <YOUR-OPENAI-KEY> with your actual API key or inject it via environment
+const OPENAI_API_KEY = '<YOUR-OPENAI-KEY>';
 
-const openai = new OpenAI({
-  apiKey: process.env.OPENAI_API_KEY,
-});
+const messagesDiv = document.getElementById('messages');
+const userInput = document.getElementById('user-input');
+const sendBtn = document.getElementById('send-btn');
 
-const response = await openai.responses.create({
-  model: "gpt-4.1",
-  input: [
-    {
-      "role": "system",
-      "content": [
-        {
-          "type": "input_text",
-          "text": "Du er en vennlig kundeservice medarbeider for Fram, en bedrift som selger grønnsaker direkte fra lokale bønder. Du skal kun svare på spørsmål som har med dette å gjøre. Du skal lete etter svar på https://codepen.io/Kjersti-Magnussen/project/editor/DKoRko# og svare etter beste evne. Svar kort og på en uformell måte. "
-        }
-      ]
-    },
-    {
-      "role": "user",
-      "content": [
-        {
-          "type": "input_text",
-          "text": "hvordan fungerer dette?"
-        }
-      ]
-    },
-    {
-      "id": "ws_6838aedde8948198b5ead9a432b3eb6f0e0de8c6509af7ad",
-      "type": "web_search_call",
-      "status": "completed"
-    },
-    {
-      "id": "msg_6838aee0ba2881988b717a62bb00c0c40e0de8c6509af7ad",
-      "role": "assistant",
-      "content": [
-        {
-          "type": "output_text",
-          "text": "Hei! Fram fungerer ved at vi leverer ferske grønnsaker direkte fra lokale bønder til deg. Du kan bestille grønnsakskasser gjennom vår nettside, og vi sørger for at de blir levert hjem til deg på et tidspunkt som passer. Vi tilbyr fleksible abonnementsløsninger, slik at du kan velge hvor ofte du ønsker levering. Innholdet i kassene varierer etter sesong, slik at du alltid får de ferskeste råvarene. Hvis du ikke er hjemme ved levering, kan du gi oss beskjed om et egnet sted å sette fra oss kassen. Vi pakker kassene med isolasjon og isposer for å sikre at varene holder seg ferske. For mer informasjon, kan du besøke vår nettside. "
-        }
-      ]
-    }
-  ],
-  text: {
-    "format": {
-      "type": "text"
-    }
-  },
-  reasoning: {},
-  tools: [
-    {
-      "type": "web_search_preview",
-      "user_location": {
-        "type": "approximate",
-        "country": "NO"
+async function addMessage(role, text) {
+  const div = document.createElement('div');
+  div.className = `message ${role}`;
+  div.textContent = text;
+  messagesDiv.appendChild(div);
+  messagesDiv.scrollTop = messagesDiv.scrollHeight;
+}
+
+async function sendMessage() {
+  const userText = userInput.value.trim();
+  if (!userText) return;
+  await addMessage('user', userText);
+  userInput.value = '';
+
+    try {
+    const response = await fetch('https://api.openai.com/v1/chat/completions', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+        Authorization: `Bearer ${OPENAI_API_KEY}`,
       },
-      "search_context_size": "medium"
-    }
-  ],
-  temperature: 1,
-  max_output_tokens: 2048,
-  top_p: 1,
-  store: true
+
+       body: JSON.stringify({
+        model: 'gpt-3.5-turbo',
+        messages: [
+          {
+            role: 'system',
+            content:
+              'Du er en vennlig kundeservice medarbeider for Fram, som selger grønnsaker fra lokale bønder. Svar kort og kun på relevante spørsmål.',
+          },
+          { role: 'user', content: userText },
+        ],
+      }),
+    });
+
+    const data = await response.json();
+    const reply = data.choices?.[0]?.message?.content || 'Ingen respons';
+    await addMessage('assistant', reply);
+  } catch (err) {
+    await addMessage('assistant', 'Feil oppstod.');
+    console.error(err);
+  }
+}
+
+sendBtn.addEventListener('click', sendMessage);
+userInput.addEventListener('keydown', (e) => {
+  if (e.key === 'Enter') {
+    e.preventDefault();
+    sendMessage();
+  }
 });

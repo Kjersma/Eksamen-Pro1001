@@ -49,29 +49,26 @@
 
     </nav>
 
-    <main>
-        <div class="chatbot-image">
-            <img src="https://assets.codepen.io/13779024/Hovedbilde-desktop-lite.jpg"
-                alt="Utsikt over fjellandskap. Foto: Markus Spiske via Unsplash">
+<main class="chatbot-main">
+      <!-- Chatboten -->
+
+      <div id="chat-container">
+        <div id="messages"></div>
+
+        <div id="input-area">
+          <input
+            type="text"
+            id="user-input"
+            placeholder="Skriv en melding..."
+          />
+          <button id="send-btn">↑</button>
         </div>
+      </div>
 
-        <!-- Chatboten -->
-
-
-        <div id="chat-container">
-            <div id="messages"></div>
-
-            <div id="input-area">
-                <input type="text" id="user-input" placeholder="Skriv en melding..." />
-                <button id="send-btn">↑</button>
-            </div>
-        </div>
-
-        <!-- Koble til JavaScript (OpenAI SDK må være inkludert her) -->
-    <script src="scripts/chatbot.js" defer></script>
-            <script src="scripts/index.js" defer></script>
+      <!-- Koble til JavaScript (OpenAI SDK må være inkludert her) -->
+      <script src="scripts/chatbot.js" defer></script>
+      <script src="scripts/index.js" defer></script>
     </main>
 
-
-
 </body>
+</html>
