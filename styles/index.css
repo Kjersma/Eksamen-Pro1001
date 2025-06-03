@@ -642,7 +642,7 @@ label {
 /*RESPONSIVE-----------------------------------*/
 
 
-/* Brown boxes */
+
 
 @media (max-width: 768px) {
 
@@ -664,28 +664,8 @@ label {
         font-size: 5rem;
     }
 
-
-    .how-it-works {
-        flex-direction: column;
-        align-items: stretch;
-    }
-
-    .how-it-works-left,
-    .how-it-works-right {
-        flex: none;
-        width: 100%;
-        /* Hver kolonne tar 100% bredde (full bredde på mobil) */
-    }
-
-    .how-it-works-left {
-        text-align: center;
-        margin-bottom: 1em;
-    }
-
-    .how-it-works-right {
-        text-align: center;
-
-    }
+    
+/* White boxes */
 
     .white-boxes .container {
         flex-direction: column;
@@ -707,6 +687,35 @@ label {
         font-size: 1rem;
     }
 
+
+    /* Brown boxes */
+
+    .how-it-works {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .how-it-works-left,
+    .how-it-works-right {
+        flex: none;
+        width: 100%;
+        /* Hver kolonne tar 100% bredde (full bredde på mobil) */
+    }
+
+    .how-it-works-left {
+        text-align: left;
+        margin-bottom: 1em;
+
+    }
+
+    .how-it-works-right {
+        text-align: left;
+  
+    }
+
+    
+
+
     /* Produce */
     .product-container-swipe {
         overflow-x: auto;
@@ -723,6 +732,28 @@ label {
     .how-it-works-right {
         padding: 1rem;
     }
+
+        .how-it-works-right .step {
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 1.5rem 0;
+    }
+
+    .how-it-works-right .step h3 {
+        width: 100%;
+        margin-bottom: 0.5rem;
+    }
+
+    .how-it-works-right .step p {
+        width: 100%;
+        margin-bottom: 0.5rem;
+    }
+
+    .how-it-works-right .step a {
+        display: block;
+        margin-top: 0.5rem;
+    }
+
 
     .how-it-works-left {
         padding-top: 3rem;

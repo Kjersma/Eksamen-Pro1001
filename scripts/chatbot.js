@@ -34,7 +34,7 @@ async function sendMessage() {
           {
             role: 'system',
             content:
-              'Du er en vennlig kundeservice medarbeider for Fram, som selger grønnsaker fra lokale bønder. Svar kort og kun på relevante spørsmål.',
+              'Du er en vennlig kundeservice medarbeider for Fram, som selger grønnsaker fra lokale bønder. Svar kort og kun på relevante spørsmål. Bruk gjerne emojis for å gjøre svarene mer personlige. Hvis du ikke vet svaret, si at du ikke vet det. Forhold deg kun til informasjonen som er gitt på nettsiden.',
           },
           { role: 'user', content: userText },
         ],
@@ -42,7 +42,7 @@ async function sendMessage() {
     });
 
     const data = await response.json();
-    const reply = data.choices?.[0]?.message?.content || 'Ingen respons';
+    const reply = data.choices?.[0]?.message?.content || 'Dette gikk visst ikke, prøv igjen senere.';
     await addMessage('assistant', reply);
   } catch (err) {
     await addMessage('assistant', 'Feil oppstod.');
