@@ -52,7 +52,6 @@ nav {
     display: flex;
     justify-content: space-between;
     align-items: center;
-
     text-align: center;
     background: #f7f2de;
     padding: 10px;
@@ -69,13 +68,14 @@ logo {
     display: flex;
 }
 
-nav logo {
+nav logo { /*logo i navigasjonslinja */
     font-size: 2rem;
     align-items: center;
     justify-content: center;
 
 }
 
+/* handlekurvteller*/
 .green-button {
     background-color: #008f51;
     color: black;
@@ -87,7 +87,6 @@ nav logo {
     align-items: left;
     justify-content: center;
     font-size: 0.875rem;
-
 }
 
 
@@ -118,12 +117,10 @@ nav logo {
 
 /*POPUP meny-----------------------------------*/
 
-/* Ved å posisjonere det absolutt og gi det 100vh høyde kan vi la menyen dekke hele skjermen når
-   `open`-attributtet settes via JavaScript */
+/* Ved å posisjonere det absolutt og gi det 100vh høyde kan vi la menyen dekke hele skjermen*/
 
 .dropdown-menu {
     z-index: 1000;
-
     position: absolute;
     top: 0;
     height: 100vh;
@@ -132,10 +129,10 @@ nav logo {
     max-width: 475px;
     background-color: #008f51;
     border: none;
-
-    padding-top: 10px;
+    padding-top: 10px; /* tweek for at streken kommer på linje med toppmeny-linjen */
 }
 
+/* Lenkene i pop-up */
 .nav-menu li a {
     margin: 0;
     font-family: "Arimo", sans-serif;
@@ -155,6 +152,7 @@ nav logo {
     text-decoration: underline;
 }
 
+/* Nederste linken i pop-up */
 .nav-menu li.last_link {
     margin-top: auto;
     margin-bottom: 5rem;
@@ -175,38 +173,27 @@ nav logo {
     text-align: left;
     padding: 0.4rem;
     align-self: flex-start;
-    margin-left: 1.5rem;
-    /* Litt avstand fra venstre kant */
-    margin-top: 0.1rem;
-    /* Litt avstand fra toppen */
+    margin-left: 1.5rem; /* Litt avstand fra venstre kant */
+    margin-top: 0.1rem; /* Litt avstand fra toppen */
     cursor: pointer;
 }
 
 .nav-menu {
-    list-style: none;
-    /* Fjern punkter (bullets) */
-    padding: 0;
-    /* Nullstill padding */
-    margin: 12rem 0 0 0;
-    /* Litt avstand fra 'close'-knappen ned til lenkene */
+    list-style: none; /* Fjern punkter (bullets) */
+    padding: 0; /* Nullstill padding */
+    margin: 12rem 0 0 0; /* Litt avstand fra 'close'-knappen ned til lenkene */
     width: 100%;
     display: flex;
-    flex-direction: column;
-    /* Stable <li> vertikalt */
-    align-items: center;
-    /* Sentrer dem horisontalt */
+    flex-direction: column; /* Stabler <li> vertikalt */
     flex-grow: 1;
 }
 
+/* linjen i pop-up*/
 .menu-line {
-    width: 100%;
-    /* Tar hele bredden av den grønne boksen */
-    border: none;
-    /* Fjern standard kantlinje på <hr> */
-    height: 1px;
-    /* Tykkelsen på linja */
-    background-color: #0b0a08;
-    /* Samme farge som teksten (eller ønsket farge) */
+    width: 100%; /* Tar hele bredden av den grønne boksen */
+    border: none; /* Fjern standard kantlinje på <hr> */
+    height: 1px; /* Tykkelsen på linja */
+    background-color: #0b0a08; /* Farge på linja*/
 
 }
 
@@ -230,10 +217,8 @@ header {
 
 .top-image img {
     width: 100%;
-    /* object-fit sørger for at bildet fyller boksen uten å bli strukket */
-    object-fit: cover;
-    /* object-position flytter utsnittet nedover så vi ser mest av fjellandskapet */
-    object-position: center bottom;
+    object-fit: cover; /* Sørger for at bildet fyller boksen uten å bli strukket */
+    object-position: center bottom;     /* Flytter utsnittet nedover så vi ser mest av fjellandskapet */
     display: block;
 }
 
@@ -270,7 +255,7 @@ header {
 /*MAIN WHITE-----------------------------------*/
 
 .white-boxes {
-    background-color: white;
+    background-color: white; /* bakgrunnsfarge for hele seksjonen */
 }
 
 .white-boxes .container {
@@ -286,7 +271,7 @@ header {
     align-items: center;
 }
 
-.white-box:first-child {
+.white-box:first-child { /*Gjelder kun for første .white-box*/
     border-right: 1px solid #000;
 }
 
@@ -300,10 +285,10 @@ header {
     margin-top: 10px;
 }
 
-.white-img {
+.white-img { 
     justify-content: center;
     margin: 44px;
-    border-radius: 16px;
+    /* standard-img inneholder border-radius så trenger ikke ha med det her */
 }
 
 .red-button {
@@ -315,7 +300,6 @@ header {
     font-size: 1rem;
     padding: 0.8rem 1.9rem;
     width: 320px;
-    align-items: center;
     margin-top: 44px;
 }
 
@@ -328,7 +312,6 @@ header {
 
 .how-it-works {
     display: flex;
-    align-items: center;
     background-color: #f7f2de;
     align-items: stretch;
 }
@@ -338,7 +321,7 @@ header {
     flex: 0 0 30%; /* Fast bredde ~30% av seksjonen for venstre kolonne */
     padding: 1em; /* Litt luft rundt teksten */
     border: 1px solid #000;
-    border-right: none; /* Fjern linje under siste blokk (da containerens bunnlinje allerede er der) */
+    border-right: none;     /* Ingen høyre kantlinje siden den er ved siden av høyre kolonne */
     align-items: center;
     justify-content: center;
 }
@@ -355,31 +338,26 @@ header {
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
-    align-items: left;
     border: 1px solid #000;
     padding: 0 5rem;
 }
 
 .how-it-works-right .step {
     display: flex;
-    padding: 2.5em 15% 2.5em 0em;
-    /* Vertikal padding innen hver blokk for luft over/under teksten */
+    padding: 2.5em 5% 2.5em 0em; /* Vertikal padding innen hver blokk for luft over/under teksten */
     border-bottom: 1px solid #000;
-    align-items: center;
 }
 
 .how-it-works-right .step:last-child {
-    border-bottom: none;
-    /* Fjern linje under siste blokk (da containerens bunnlinje allerede er der) */
+    border-bottom: none; /* Fjern linje under siste blokk (da containerens bunnlinje allerede er der) */
 }
 
 .how-it-works-right .step h3 {
-    margin: 0;
     font-family: "Arimo", sans-serif;
     font-weight: 100;
     font-size: 1rem;
     align-self: center;
-    width: 25%;
+    width: 25%; /* tar fast bredde og gir rett linje mot resten av teksten */
     flex-shrink: 0;
     padding-right: 4rem;
 }
@@ -397,6 +375,7 @@ header {
     margin: 0;
 }
 
+/* Linken i seksjonen */
 .how-it-works-right .step a {
     color: rgba(0, 0, 0, 0.7);
     text-decoration: none;
@@ -407,10 +386,7 @@ header {
 }
 
 
-.how-it-works-right .step p:last-child {
-    margin-bottom: 0;
-    /* Ingen ekstra margin etter siste avsnitt i blokken */
-}
+
 
 
 /*MAIN-----------------------------------*/
@@ -434,22 +410,23 @@ h2 {
 
 
 /*POPULAR-----------------------------------*/
+
 .popular {
-    background-color: white;
-    padding-top: 5.625rem;
+    background-color: white; /*Bakgrunnsfarge for hele seksjonen */
+    padding-top: 5.625rem; /*pdding topp, satt på hele seksjonen */
 }
 
 
 .popular h2 {
     text-align: left;
-    margin-bottom: 1.5rem;
+    margin-bottom: 1.5rem; /* luft ned til bildene */
 }
 
 .product-container {
     display: flex;
     /* Hold alle kort på én linje (ingen wrapping) */
     align-items: center;
-    margin: 0 -0.5rem;
+    margin: 0 -0.5rem; /* For å kompensere for padding på hvert kort */
 }
 
 .product-container-wrap {
@@ -464,13 +441,12 @@ h2 {
 
 .product-image {
     width: 100%;
-    object-fit: cover;
+    object-fit: cover; /*Skalere bildet slik at det fyller hele kortet uten å bli strukket */
     border-radius: 1rem;
     display: block;
     overflow: hidden;
-    /* aspect-ratio gir kortene en fast størrelse og hindrer at de hopper rundt
+    aspect-ratio: 227 / 216; /* Gir kortene en fast størrelse og hindrer at de hopper rundt
 mens bildene lastes inn i nettleseren.*/
-    aspect-ratio: 227 / 216;
 }
 
 /* Beholder for produktnavn og pris på samme linje */
@@ -528,13 +504,12 @@ mens bildene lastes inn i nettleseren.*/
 }
 
 .relative {
-    position: relative;
-    /* For å kunne plassere knappen absolutt i forhold til kortet */
+    position: relative; /* For å kunne plassere knappen der man vil over kortet, i forhold til kortet */
 }
 
 
 /*PRODUCT side 2-----------------------------------*/
-
+/*mye gjenbruk fra front*/
 
 .produce h2 {
     margin-top: 6rem;
@@ -546,6 +521,7 @@ mens bildene lastes inn i nettleseren.*/
     margin-bottom: 2rem;
 }
 
+/*for at teksten kun skal gå ut til en bestemt bredde*/
 .text-wrapper p {
     max-width: 40rem;
     width: 100%;
@@ -555,11 +531,8 @@ mens bildene lastes inn i nettleseren.*/
 /*MAP side 2-----------------------------------*/
 
 .how-it-works-right-map {
-    flex: 1;
-    /* Høyre kolonne tar resten av tilgjengelig bredde */
+    flex: 1; /* Høyre kolonne tar resten av tilgjengelig bredde */
     display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
     border: 1px solid #000;
     padding: 3rem 5rem;
 
@@ -705,15 +678,31 @@ label {
         padding: 6rem 0;
     }
 
+     .white-boxes {
+        padding: 0.1rem;
+    }
+
+
     .white-box:first-child {
-        border-right: none;
-        border-bottom: 1px solid #000;
+        border-right: none; /* fjerner border right på mobil */
+        border-bottom: 1px solid #000; /* Legger i steden på en border mellom boksene */
     }
 
 
     .red-button.grotesk { /*targeter elementer som har begge klassene */
         font-size: 1rem;
     }
+
+       .white-img {
+        justify-content: center;
+        margin-top: 44px;
+        margin-bottom: 44px;
+        margin-left: 2px;
+        margin-right: 2px;
+        border-radius: 16px;
+    }
+
+   
 
 
     /* Brown boxes */
@@ -727,40 +716,21 @@ label {
     .how-it-works-left,
     .how-it-works-right {
         flex: none;
-        width: 100%;
-        /* Hver kolonne tar 100% bredde (full bredde på mobil) */
+        width: 100%; /* Hver kolonne tar 100% bredde (full bredde på mobil) */
     }
 
     .how-it-works-left {
         text-align: left;
         margin-bottom: 1em;
-
+        padding-top: 3rem;
+        padding-bottom: 3rem;
     }
 
     .how-it-works-right {
         text-align: left;
-    }
-
-
-
-
-    /* Produce */
-    .product-container-swipe {
-        /* Lar kortene scrolles sideveis på mobil */
-        overflow-x: auto;
-    }
-
-    .product-container-swipe .product-card {
-        flex: 0 0 80%;
-    }
-
-    .product-container-wrap .product-card {
-        flex: 0 0 100%;
-    }
-
-    .how-it-works-right {
         padding: 1rem;
     }
+
 
     .how-it-works-right .step {
         flex-direction: column;
@@ -784,35 +754,38 @@ label {
 
     }
 
-
-    .how-it-works-left {
-        padding-top: 3rem;
-        padding-bottom: 3rem;
-    }
-
-    .how-it-works-left h2 {
+   .how-it-works-left h2 {
         font-size: 1.7rem;
     }
+  
+
+ 
+
+    /* Popular */
+
+    .product-container-swipe { /* Lar kortene scrolles sideveis på mobil */
+        overflow-x: auto;
+    }
+
+    .product-container-swipe .product-card {
+        flex: 0 0 80%; /* Hvert kort tar 80% av bredden på mobil */
+    }
+
+    .product-container-wrap .product-card {
+        flex: 0 0 100%;
+    }
+
+
+ 
 
     .grotesk {
         font-size: 1.8rem;
     }
 
-    .white-img {
-        justify-content: center;
-        margin-top: 44px;
-        margin-bottom: 44px;
-        margin-left: 2px;
-        margin-right: 2px;
-        border-radius: 16px;
-    }
-
-    .white-boxes {
-        padding: 0.1rem;
-    }
-
+ 
 
     /* Footer */
+
     footer logo {
         font-size: 3.2rem;
         font-weight: 100;
@@ -823,7 +796,7 @@ label {
         text-transform: uppercase;
         text-align: left;
         margin-top: 5rem;
-        font-size: 1.8rem;
+
     }
 
     footer p {
