@@ -1,4 +1,5 @@
 
+ // Hent relevante elementer én gang og gjenbruk dem. 
  const toggleButton = document.querySelector('.hamburger');
   const closeButton  = document.querySelector('.close');
   const mobileMenu   = document.querySelector('.dropdown-menu');

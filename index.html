@@ -2,77 +2,88 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <title>FRAM - Home delivery from your local farms</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="styles/index.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Arimo:ital,wght@0,400..700;1,400..700&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Frank+Ruhl+Libre:wght@300..900&display=swap" rel="stylesheet">
+	<meta charset="UTF-8">
+	<title>FRAM - Home delivery from your local farms</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="styles/index.css">
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Arimo:ital,wght@0,400..700;1,400..700&display=swap"
+		rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css2?family=Frank+Ruhl+Libre:wght@300..900&display=swap" rel="stylesheet">
 </head>
 
 <body>
-    <!-- NAVIGATION------------------------------------------>
-       <!-- NAVIGATION------------------------------------------>
-    <nav>
-        <div>
-            <button class="hamburger" aria-label="Åpne meny">
-                <span></span>
-                <span></span>
-                <span></span>
-            </button>
-        </div>
-        <logo>FRAM</logo>
-        
-        <button class="green-button">0</button>
- 
+	<!-- NAVIGATION------------------------------------------>
 
-        <!-- pop-up -->
+	<nav>
+		<div>
+			<button class="hamburger" aria-label="Åpne meny">
+				<span></span>
+				<span></span>
+				<span></span>
+			</button>
+		</div>
+		<logo>FRAM</logo>
+		<!-- "logo" er ikke et standard HTML-element, men fungerer fint som en
+             beholder for teksten. -->
 
-        <dialog class="dropdown-menu" aria-label="menu">
-            <div class="menu-content">
- 
-                <button class="close" aria-label="close menu"> &times;</button> <!-- &times = kryss -->
-                <hr class="menu-line">
-                <ul class="nav-menu">
-                    <li><a href="product.html">PRODUCTS</a></li>
-                    <li><a href="chatbot.html">CHAT</a></li>
-                    <li class="last_link"><a href="">CHECKOUT</a></li>
-                </ul>
-            </div>
-        </dialog>
-<script>
- 
+		<button class="green-button">0</button>
 
-</script>
 
-</nav>
+		<!-- pop-up -->
+		<!--
+          Menyen er implementert som et <dialog>-element. Ved å bruke
+          dialog får vi en innebygd modal som enkelt kan åpnes og lukkes
+          fra JavaScript ved å sette egenskapen `open`.
+        -->
 
-    <!-- HEADER------------------------------------------>
+		<dialog class="dropdown-menu" aria-label="menu">
+			<div class="menu-content">
 
-    <header>
-        <div class="top-image">
-            <img src="https://assets.codepen.io/13779024/Hovedbilde-desktop-lite.jpg" alt="Utsikt over fjellandskap. Foto: Markus Spiske via Unsplash">
-        </div>
+				<button class="close" aria-label="close menu"> &times;</button> <!-- &times = kryss -->
+				<hr class="menu-line">
+				<ul class="nav-menu">
+					<li><a href="product.html">PRODUCTS</a></li>
+					<li><a href="chatbot.html">CHAT</a></li>
+					<li class="last_link"><a href="">CHECKOUT</a></li>
+				</ul>
+			</div>
+		</dialog>
+		<script>
+
+
+		</script>
+
+	</nav>
+
+	<!-- HEADER------------------------------------------>
+
+	<header>
+		<div class="top-image">
+			<img src="https://assets.codepen.io/13779024/Hovedbilde-desktop-lite.jpg"
+				alt="Utsikt over fjellandskap. Foto: Markus Spiske via Unsplash">
+		</div>
 		<div class="header-text">
 			<h1>FRAM</h1>
-            <span class="vertical-line"></span>
-            <p>Home delivery from <br>your local farms</p>
+			<span class="vertical-line"></span>
+			<p>Home delivery from <br>your local farms</p>
 		</div>
-    </header>
+	</header>
 
-    <main>
-        <!-- WHITE BOXES------------------------------------------>
+	<main>
 
-        <section class="white-boxes">
+		<!-- WHITE BOXES------------------------------------------>
+
+		<section class="white-boxes">
 			<div class="container">
 				<div class="white-box">
 					<h2 class="grotesk">Shop our seasonal<br> selection</h2>
 					<p class="frank front-frank">Updated every week</p>
 					<img class="standard-img white-img" src="https://assets.codepen.io/13779024/greens-front.jpg"
 						alt="Kurv med grønnsaker. Foto: Nina Luong via Unsplash">
-					<p class="frank front-frank">New produce is added continuously as time<br> goes by and the seasons change.</p>
+					<p class="frank front-frank">New produce is added continuously as time<br> goes by and the seasons
+						change.</p>
 					<button class="red-button grotesk">Browse our selection</button>
 				</div>
 				<div class="white-box">
@@ -80,60 +91,68 @@
 					<p class="frank front-frank">All your questions answered</p>
 					<img class="standard-img white-img" src="https://assets.codepen.io/13779024/Man-field_front.jpg"
 						alt="Mann står i en åker og peker. Foto: Rebecca Ritchie via Unsplash">
-					<p class="frank front-frank">New produce is added continuously as time<br> goes by and the seasons change.</p>
+					<p class="frank front-frank">New produce is added continuously as time<br> goes by and the seasons
+						change.</p>
 					<button class="red-button grotesk">Go to chat</button>
 				</div>
 			</div>
-        </section>
+		</section>
 
-        <!-- HOW IT WORKS------------------------------------------>
+		<!-- HOW IT WORKS------------------------------------------>
 
-        <section class="how-it-works">
-            <div class="how-it-works-left">
-                <h2 class="grotesk">THIS IS HOW IT <br>WORKS</h2>
-            </div>
-            <div class="how-it-works-right">
-                <section class="step">
-                    <h3>ORDER GROCERIES</h3>
-                    <div>
-                        <p>Fram is a circular service that ensures your kitchen is always stocked with the essentials you need. Browse our seasonal selection, choose your items, and place your order online.</p>
-                        <p class="mb-0"><a href="product.html">See our stock here</a></p>
-                    </div>
-                </section>
-                <section class="step">
-                    <h3>STOCK UP</h3>
-                    <div>
-                        <p>Once your order arrives, unpack the produce and store it however it works best for you. Hold onto the containers — they’re yours to keep until your next order.</p>
-                    </div>
-                </section>
-                <section class="step">
-                    <h3>SCAN &amp; REORDER</h3>
-                    <div>
-                        <p>Ready for a refill? Grab the containers from your last order and scan the QR code with our app or your phone’s camera. This instantly adds the items back to your cart, making reordering a breeze.</p>
-                    </div>
-                </section>
-                <section class="step">
-                    <h3>SWAP &amp; REUSE</h3>
-                    <div>
-                        <p>When we deliver your new order, simply leave your empty containers outside. We’ll pick them up, clean them thoroughly, and reuse them for future deliveries.</p>
-                    </div>
-                </section>
-            </div>
-        </section>
+		<section class="how-it-works">
+			<div class="how-it-works-left">
+				<h2 class="grotesk">THIS IS HOW IT <br>WORKS</h2>
+			</div>
+			<div class="how-it-works-right">
+				<section class="step">
+					<h3>ORDER GROCERIES</h3>
+					<div>
+						<p>Fram is a circular service that ensures your kitchen is always stocked with the essentials
+							you need. Browse our seasonal selection, choose your items, and place your order online.</p>
+						<p class="mb-0"><a href="product.html">See our stock here</a></p>
+					</div>
+				</section>
+				<section class="step">
+					<h3>STOCK UP</h3>
+					<div>
+						<p>Once your order arrives, unpack the produce and store it however it works best for you. Hold
+							onto the containers — they’re yours to keep until your next order.</p>
+					</div>
+				</section>
+				<section class="step">
+					<h3>SCAN &amp; REORDER</h3>
+					<div>
+						<p>Ready for a refill? Grab the containers from your last order and scan the QR code with our
+							app or your phone’s camera. This instantly adds the items back to your cart, making
+							reordering a breeze.</p>
+					</div>
+				</section>
+				<section class="step">
+					<h3>SWAP &amp; REUSE</h3>
+					<div>
+						<p>When we deliver your new order, simply leave your empty containers outside. We’ll pick them
+							up, clean them thoroughly, and reuse them for future deliveries.</p>
+					</div>
+				</section>
+			</div>
+		</section>
 
-        <!-- POPULAR PRODUCE ------------------------------------------>
+		<!-- POPULAR PRODUCE ------------------------------------------>
 
 		<section class="popular">
 			<div class="container">
 				<h2 class="grotesk">POPULAR PRODUCE</h2>
-			
+
 				<div class="product-container product-container-swipe">
-			
+					<!-- På smale skjermer kan man sveipe denne listen horisontalt -->
+
 					<!-- Produktkort 1: Oats -->
-			
+
 					<div class="product-card">
 						<div class="relative">
-							<img src="https://assets.codepen.io/13779024/web_grain.jpg" alt="Oats" class="product-image">
+							<img src="https://assets.codepen.io/13779024/web_grain.jpg" alt="Oats"
+								class="product-image">
 							<button class="add-to-basket">Add to basket ↑</button>
 						</div>
 						<div class="product-name-price">
@@ -142,11 +161,12 @@
 						</div>
 						<div class="product-weight">1 kg</div>
 					</div>
-			
+
 					<!-- Produktkort 2: Red Onions -->
 					<div class="product-card">
 						<div class="relative">
-							<img src="https://assets.codepen.io/13779024/web_onions.jpg" alt="Red Onions" class="product-image">
+							<img src="https://assets.codepen.io/13779024/web_onions.jpg" alt="Red Onions"
+								class="product-image">
 							<button class="add-to-basket">Add to basket ↑</button>
 						</div>
 						<div class="product-name-price">
@@ -155,11 +175,12 @@
 						</div>
 						<div class="product-weight">0.5 kg</div>
 					</div>
-			
+
 					<!-- Produktkort 3: Garlic -->
 					<div class="product-card">
 						<div class="relative">
-							<img src="https://assets.codepen.io/13779024/web_garlic.jpg" alt="Garlic" class="product-image">
+							<img src="https://assets.codepen.io/13779024/web_garlic.jpg" alt="Garlic"
+								class="product-image">
 							<button class="add-to-basket">Add to basket ↑</button>
 						</div>
 						<div class="product-name-price">
@@ -171,26 +192,27 @@
 				</div>
 			</div>
 		</section>
-    </main>
+	</main>
 
-    <!-- FOOTER------------------------------------------>
+	<!-- FOOTER------------------------------------------>
 
-    <footer>
-        <logo class="logo-footer frank">FRAM</logo>
-        <hr style="border: none; border-top: 0.5px solid white;">
-        <h2 class="grotesk">Stay updated</h2>
-        <p class="frank">Sign up for our newsletter to be the first<br> to know about new produce or other<br> exciting news!</p>
-        <form class="form" id="form" action="mailto:hei@fram.com" method="post" enctype="text/plain">
-            <label for="name"></label>
-            <input type="text" id="name" name="name" required placeholder="First name">
-            <label for="epost"></label>
-            <input type="email" id="email" name="email" required placeholder="E-mail adress">
-            <button type="submit" class="form-button">Send</button>
-        </form>
-    </footer>
+	<footer>
+		<logo class="logo-footer frank">FRAM</logo>
+		<hr style="border: none; border-top: 0.5px solid white;">
+		<h2 class="grotesk">Stay updated</h2>
+		<p class="frank">Sign up for our newsletter to be the first<br> to know about new produce or other<br> exciting
+			news!</p>
+		<form class="form" id="form" action="mailto:hei@fram.com" method="post" enctype="text/plain">
+			<label for="name"></label>
+			<input type="text" id="name" name="name" required placeholder="First name">
+			<label for="epost"></label>
+			<input type="email" id="email" name="email" required placeholder="E-mail adress">
+			<button type="submit" class="form-button">Send</button>
+		</form>
+	</footer>
 
 
-    <script src="scripts/index.js"></script> <!-- Scripts -->
+	<script src="scripts/index.js"></script> <!-- Scripts -->
 </body>
 
 </html>

@@ -57,6 +57,7 @@ nav {
     background: #f7f2de;
     padding: 10px;
     border-bottom: 1px solid #0b0a08;
+    /* position: sticky fester navigasjonen til toppen når du scroller */
     position: sticky;
     top: 0;
     z-index: 1000;
@@ -110,7 +111,15 @@ nav logo {
     background-color: #333;
 }
 
+.hamburger span:hover {
+    background-color: rgba(0, 0, 0, 0.4);
+}
+
+
 /*POPUP meny-----------------------------------*/
+
+/* Ved å posisjonere det absolutt og gi det 100vh høyde kan vi la menyen dekke hele skjermen når
+   `open`-attributtet settes via JavaScript */
 
 .dropdown-menu {
     z-index: 1000;
@@ -140,6 +149,10 @@ nav logo {
     text-align: center;
     padding: 1rem 0;
     line-height: 1.8;
+}
+
+.nav-menu li a:hover {
+    text-decoration: underline;
 }
 
 .nav-menu li.last_link {
@@ -205,6 +218,8 @@ header {
     overflow: hidden;
 }
 
+/* aspect-ratio sørger for at containeren beholder riktig høyde i forhold
+   til bredden selv før bildet er lastet. */
 .top-image {
     aspect-ratio: 2 / 1;
     width: 100%;
@@ -215,13 +230,16 @@ header {
 
 .top-image img {
     width: 100%;
+    /* object-fit sørger for at bildet fyller boksen uten å bli strukket */
     object-fit: cover;
+    /* object-position flytter utsnittet nedover så vi ser mest av fjellandskapet */
     object-position: center bottom;
     display: block;
 }
 
+
 .header-text {
-    position: absolute;
+    position: absolute; /* Slik at teksten legges over bildet og sentreres */
     display: flex;
     align-items: center;
     justify-content: center;
@@ -317,13 +335,10 @@ header {
 
 .how-it-works-left {
     display: flex;
-    flex: 0 0 30%;
-    /* Fast bredde ~30% av seksjonen for venstre kolonne */
-    padding: 1em;
-    /* Litt luft rundt teksten */
+    flex: 0 0 30%; /* Fast bredde ~30% av seksjonen for venstre kolonne */
+    padding: 1em; /* Litt luft rundt teksten */
     border: 1px solid #000;
-    border-right: none;
-    /* Fjern linje under siste blokk (da containerens bunnlinje allerede er der) */
+    border-right: none; /* Fjern linje under siste blokk (da containerens bunnlinje allerede er der) */
     align-items: center;
     justify-content: center;
 }
@@ -342,11 +357,12 @@ header {
     flex-wrap: wrap;
     align-items: left;
     border: 1px solid #000;
+    padding: 0 5rem;
 }
 
 .how-it-works-right .step {
     display: flex;
-    padding: 2.5em 25% 2.5em 5em;
+    padding: 2.5em 15% 2.5em 0em;
     /* Vertikal padding innen hver blokk for luft over/under teksten */
     border-bottom: 1px solid #000;
     align-items: center;
@@ -365,12 +381,12 @@ header {
     align-self: center;
     width: 25%;
     flex-shrink: 0;
+    padding-right: 4rem;
 }
 
 
 .how-it-works-right .step p {
-    margin: 0 0 1em 0;
-    /* Margin under avsnitt for luft (siste avsnitt justeres under) */
+    margin: 0 0 1em 0; /* Margin under avsnitt for luft (siste avsnitt justeres under) */
     font-family: "Arimo", sans-serif;
     font-weight: 100;
     font-size: 1rem;
@@ -383,7 +399,13 @@ header {
 
 .how-it-works-right .step a {
     color: rgba(0, 0, 0, 0.7);
+    text-decoration: none;
 }
+
+.how-it-works-right .step a:hover {
+    text-decoration: underline;
+}
+
 
 .how-it-works-right .step p:last-child {
     margin-bottom: 0;
@@ -446,14 +468,15 @@ h2 {
     border-radius: 1rem;
     display: block;
     overflow: hidden;
+    /* aspect-ratio gir kortene en fast størrelse og hindrer at de hopper rundt
+mens bildene lastes inn i nettleseren.*/
     aspect-ratio: 227 / 216;
 }
 
 /* Beholder for produktnavn og pris på samme linje */
 .product-name-price {
     display: flex;
-    justify-content: space-between;
-    /* Plasser produktnavn til venstre og pris til høyre */
+    justify-content: space-between; /* Plasser produktnavn til venstre og pris til høyre */
     padding-top: 0.5rem;
     font-size: 1.55rem;
     font-family: "Arimo", sans-serif;
@@ -485,7 +508,7 @@ h2 {
     margin-bottom: 5rem;
 }
 
-/* Stil for "Add to basket"-knappen */
+/* "Add to basket"-knappen */
 .add-to-basket {
     display: inline-block;
     background-color: #000;
@@ -531,8 +554,15 @@ h2 {
 
 /*MAP side 2-----------------------------------*/
 
-.how-it-works-right {
-    padding: 5rem;
+.how-it-works-right-map {
+    flex: 1;
+    /* Høyre kolonne tar resten av tilgjengelig bredde */
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    border: 1px solid #000;
+    padding: 3rem 5rem;
+
 }
 
 
@@ -594,7 +624,7 @@ form {
 }
 
 
-/* Stil på selve pil-knappen */
+/* Pil-knappen */
 .submit-arrow {
     position: absolute;
     right: 0;
@@ -639,10 +669,9 @@ label {
     padding-top: 0.9em;
 }
 
+
+
 /*RESPONSIVE-----------------------------------*/
-
-
-
 
 @media (max-width: 768px) {
 
@@ -664,8 +693,8 @@ label {
         font-size: 5rem;
     }
 
-    
-/* White boxes */
+
+    /* White boxes */
 
     .white-boxes .container {
         flex-direction: column;
@@ -682,8 +711,7 @@ label {
     }
 
 
-    .red-button.grotesk {
-        /*targeter elementer som har begge klassene */
+    .red-button.grotesk { /*targeter elementer som har begge klassene */
         font-size: 1rem;
     }
 
@@ -693,6 +721,7 @@ label {
     .how-it-works {
         flex-direction: column;
         align-items: stretch;
+        width: 100%;
     }
 
     .how-it-works-left,
@@ -710,14 +739,14 @@ label {
 
     .how-it-works-right {
         text-align: left;
-  
     }
 
-    
+
 
 
     /* Produce */
     .product-container-swipe {
+        /* Lar kortene scrolles sideveis på mobil */
         overflow-x: auto;
     }
 
@@ -733,15 +762,15 @@ label {
         padding: 1rem;
     }
 
-        .how-it-works-right .step {
+    .how-it-works-right .step {
         flex-direction: column;
         align-items: flex-start;
-        padding: 1.5rem 0;
+        padding: 2.5rem 2rem;
     }
 
     .how-it-works-right .step h3 {
         width: 100%;
-        margin-bottom: 0.5rem;
+        margin-bottom: 2rem;
     }
 
     .how-it-works-right .step p {
@@ -751,7 +780,8 @@ label {
 
     .how-it-works-right .step a {
         display: block;
-        margin-top: 0.5rem;
+        margin-top: 1rem;
+
     }
 
 
@@ -763,7 +793,6 @@ label {
     .how-it-works-left h2 {
         font-size: 1.7rem;
     }
-
 
     .grotesk {
         font-size: 1.8rem;
@@ -794,7 +823,6 @@ label {
         text-transform: uppercase;
         text-align: left;
         margin-top: 5rem;
-
         font-size: 1.8rem;
     }
 

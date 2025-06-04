@@ -30,6 +30,10 @@
  
 
         <!-- pop-up -->
+          <!--
+          Også her brukes <dialog> for mobilmenyen. Den kan åpnes eller lukkes
+          ved å sette `open`-attributtet i JavaScript.
+        -->
 
         <dialog class="dropdown-menu" aria-label="menu">
             <div class="menu-content">
@@ -66,6 +70,8 @@
                 <!-- Produktkort 1: Oats -->
                 <div class="product-card">
                     <div class="relative">
+                         <!-- Knappen ligger absolutt over bildet,
+                             derfor er denne boksen satt til "relative" -->
                         <img src="https://assets.codepen.io/13779024/web_grain.jpg" alt="Oats" class="product-image">
                         <button class="add-to-basket">Add to basket ↑</button>
                     </div>
@@ -140,7 +146,8 @@
                 <h2 class="grotesk">See our <br>partnering farms</h2>
             </div>
 
-            <div class="how-it-works-right">
+            <div class="how-it-works-right-map">
+                <!-- Google kart legges inn via et iframe-element -->
                 <iframe width="100%"
                     height="400" 
                     style="border:0;"
@@ -169,6 +176,7 @@
             <input type="text" id="name" name="name" required placeholder="First name">
             <label for="email"></label>
             <div class="input-wrapper">
+                   <!-- Pil-knappen plasseres inne i feltet med absolutt posisjonering -->
                 <input type="email" id="email" name="email" required placeholder="E-mail adress">
                 <button type="submit" class="submit-arrow">
                     <svg width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
