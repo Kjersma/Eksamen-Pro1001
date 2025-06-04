@@ -2,20 +2,6 @@
 
 Dette repositoriet inneholder eksamensoppgaven i emnet **PRO1001 våren 2025** ved Oslo Nye Fagskole. Prosjektet viser konseptet "FRAM" som tilbyr hjemlevering av ferske råvarer fra lokale gårder. Designet er basert på en ferdig Figma-mal og implementert med statiske HTML-sider, CSS og JavaScript.
 
-## Innhold og mappestruktur
-
-├── index.html        # Startsiden
-├── product.html      # Produktside med fullt vareutvalg
-├── chatbot.html      # Side med chatbot
-├── scripts/          # JavaScript for meny, handlekurv og chatbot
-│   ├── index.js
-│   └── chatbot.js
-├── styles/           # Globale stiler
-│   ├── index.css
-│   └── chatbot.css
-└── README.md
-
-
 
 **Konfigurer chatboten**
    - Skaff en API-nøkkel fra [OpenAI](https://platform.openai.com/).
