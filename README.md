@@ -8,6 +8,10 @@ Dette repositoriet inneholder eksamensoppgaven i emnet **PRO1001 våren 2025** v
    - Åpne `scripts/chatbot.js` og erstatt verdien i <YOUR-OPENAI-KEY> med din nøkkel.
    - Lagre filen. Når du laster `chatbot.html` vil chatboten kommunisere med OpenAI sitt API.
 
+**Konfigurer Google Maps**
+   - Få en API-nøkkel fra [Google Cloud Console](https://console.cloud.google.com/).
+   - I `product.html` erstatter du `YOUR-GOOGLE-MAPS-API-KEY` i kartskriptet med din egen nøkkel.
+
 
 ## Prosjektbeskrivelse
 

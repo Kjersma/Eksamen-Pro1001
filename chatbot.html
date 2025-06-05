@@ -16,7 +16,7 @@
 </head>
 
 <body>
-    
+
     <!-- NAVIGATION------------------------------------------>
 
     <nav>
@@ -59,18 +59,18 @@
         <div id="messages"></div>
 
         <div id="input-area">
-          <input
-            type="text"
+          <textarea
             id="user-input"
             placeholder="Skriv en melding..."
-          />
+            autofocus 
+          ></textarea> <!-- autofocus gjør at input-feltet er aktivt ved last -->
           <button id="send-btn">↑</button>
         </div>
       </div>
 
       <!-- Koble til JavaScript (OpenAI SDK må være inkludert her) -->
        <!-- "defer" gjør at skriptene kjører etter at HTMLen er lest inn -->
-      <script src="scripts/chatbot.js" defer></script>
+      <script src="scripts/chatbot.js"  defer></script>
       <script src="scripts/index.js" defer></script>
     </main>
 

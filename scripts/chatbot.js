@@ -12,10 +12,12 @@ const sendBtn = document.getElementById('send-btn');
 async function addMessage(role, text) {
   const div = document.createElement('div');
   div.className = `message ${role}`;
-  div.textContent = text;
+  div.innerHTML = text.replaceAll('>', "&gt;").replaceAll('<', '&lt;').replaceAll(/\n/g, "<br />"); // Erstatter linjeskift med <br> for bedre formatering (også funnet på nett) og sørger for at < og > ikke blir tolket som HTML-tagger
   messagesDiv.appendChild(div);
   messagesDiv.scrollTop = messagesDiv.scrollHeight;
 }
+
+addMessage('assistant', 'Hei! Hvordan kan jeg hjelpe deg i dag? 🌱');
 
 // Sender brukerens melding til OpenAI og viser svaret.
 async function sendMessage() {
@@ -39,7 +41,7 @@ async function sendMessage() {
           {
             role: 'system',
             content:
-              'Du er en vennlig kundeservice medarbeider for Fram, som selger grønnsaker fra lokale bønder. Svar kort og kun på relevante spørsmål. Bruk gjerne emojis for å gjøre svarene mer personlige. Hvis du ikke vet svaret, si at du ikke vet det. Forhold deg kun til informasjonen som er gitt på nettsiden.',
+              'Du er en vennlig kundeservice medarbeider for Fram, som selger grønnsaker fra lokale bønder. Svar kort og kun på relevante spørsmål. Bruk gjerne emojis, men med måte, for å gjøre svarene mer personlige. Hvis du ikke vet svaret, si at du ikke vet men de kan ta kontakt på hei@fram.no. Forhold deg kun til informasjonen som er gitt på nettsiden.',
           },
           { role: 'user', content: userText },
         ],
@@ -62,7 +64,7 @@ async function sendMessage() {
 // eventuelt forsøker å sende en vanlig HTTP-request.
 sendBtn.addEventListener('click', sendMessage);
 userInput.addEventListener('keydown', (e) => {
-  if (e.key === 'Enter') {
+  if (e.key === 'Enter' && !e.shiftKey) {
     e.preventDefault();
     sendMessage();
   }

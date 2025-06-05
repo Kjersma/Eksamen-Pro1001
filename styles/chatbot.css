@@ -104,8 +104,9 @@
     border: none;
     height: 4rem;
     border-radius: 1rem;
-    padding-left: 1rem;
+    padding: 1rem;
     font-size: 1rem;
+    font-family: "Arimo", sans-serif;
 }
 
 #output_text {
