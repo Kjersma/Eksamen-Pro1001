@@ -596,6 +596,10 @@ form {
     border: 2px solid transparent;
 }
 
+.form-button:hover {
+    background-color: #dedede;
+
+}
 
 .input-wrapper {
     position: relative;
